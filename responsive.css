@@ -1,0 +1,495 @@
+@media screen and (max-width: 1199px) {
+    li.nav {
+        left: 50%;
+        transform: translateX(-50%);
+        width: min(92vw, 720px);
+    }
+
+    .logo {
+        margin-right: 0;
+    }
+
+    .home-title {
+        left: 40px;
+    }
+
+    .home-des {
+        right: 40px;
+        max-width: 420px;
+    }
+
+    .about {
+        height: auto;
+        min-height: 100vh;
+        padding-top: 120px;
+        padding-bottom: 80px;
+    }
+
+    .about-me {
+        margin-top: 0;
+        padding-left: 60px;
+        padding-right: 60px;
+        gap: 60px;
+    }
+
+    .about-text {
+        max-width: 520px;
+    }
+
+    .about-me button {
+        left: 0;
+    }
+
+    .circle-layer,
+    .circle-layer1 {
+        display: none;
+    }
+
+    .services-title {
+        left: 0;
+        padding-top: 80px;
+    }
+
+    .tech {
+        height: auto;
+        min-height: 100vh;
+        padding-bottom: 100px;
+    }
+
+    .section-title-reveal.tech-tittle {
+        left: 0;
+        text-align: left;
+        width: 100%;
+    }
+
+    .glass-card1 {
+        width: 100%;
+        max-width: 360px;
+        height: 230px;
+        margin: 0 auto;
+    }
+
+    .works-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, minmax(230px, 420px));
+        padding: 20px 0;
+    }
+
+    .works-grid .work:nth-child(1),
+    .works-grid .work:nth-child(2),
+    .works-grid .work:nth-child(3),
+    .works-grid .work:nth-child(4) {
+        grid-area: auto;
+    }
+
+    .contact {
+        height: auto;
+        min-height: 100vh;
+        padding: 100px 48px 140px;
+    }
+
+    .contact-wrapper {
+        gap: 40px;
+    }
+
+    .contact-title {
+        left: 250px;
+        font-size: 42px;
+        max-width: 560px;
+    }
+
+    .contact-subtext {
+        left: 460px;
+        top: 210px;
+        max-width: 300px;
+    }
+
+    .email-pill {
+        left: 460px;
+        font-size: 26px;
+        top: 290px;
+    }
+
+    .contact-right {
+        margin-top: 430px;
+        left: -20px;
+        gap: 48px;
+    }
+
+    .bg-name {
+        font-size: 130px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    .home {
+        height: auto;
+        min-height: 100vh;
+        padding-bottom: 60px;
+    }
+
+    li.nav {
+        top: 20px;
+        width: min(94vw, 640px);
+        height: auto;
+        min-height: 48px;
+        padding: 10px 16px;
+    }
+
+    .logo {
+        font-size: 22px;
+        left: 20px;
+    }
+
+    .navlink {
+        font-size: 15px;
+        gap: 4px;
+    }
+
+    .navlink ul {
+        margin: 0;
+        padding: 0 8px;
+    }
+
+    .home-title {
+        left: 28px;
+        top: 44%;
+    }
+
+    .home-des {
+        right: 28px;
+        bottom: 20px;
+        max-width: 320px;
+        font-size: 14px;
+    }
+
+    .about {
+        padding-top: 100px;
+    }
+
+    .about-me {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 32px;
+        padding-right: 32px;
+        gap: 30px;
+    }
+
+    .prf img {
+        margin-top: 0;
+    }
+
+    .about-title,
+    .services-title,
+    .section-title-reveal.tech-tittle h1,
+    .works-section .works-title {
+        font-size: 34px;
+    }
+
+    .about-me p {
+        font-size: 18px;
+    }
+
+    .about-me span,
+    .about-text .hi {
+        font-size: 20px;
+    }
+
+    .service-card {
+        height: auto;
+        border-radius: 32px;
+        padding: 24px;
+        gap: 16px;
+        align-items: flex-start;
+        transform: none !important;
+        opacity: 1 !important;
+        filter: none !important;
+    }
+
+    .service-number {
+        font-size: 30px;
+    }
+
+    .service-content h3 {
+        font-size: 20px;
+    }
+
+    .service-content p {
+        font-size: 15px;
+        line-height: 1.5;
+    }
+
+    .tech-container-wrapper {
+        height: 120px;
+        margin-bottom: 70px;
+    }
+
+    .works-section {
+        padding: 0 5%;
+    }
+
+    .works-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .work {
+        min-height: 260px;
+    }
+
+    .contact {
+        padding: 90px 28px 120px;
+    }
+
+    .contact-wrapper {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .contact-left {
+        max-width: 100%;
+    }
+
+    .profile-img,
+    .sign-img,
+    .contact-title,
+    .contact-subtext,
+    .email-pill,
+    .contact-right {
+        position: static;
+        left: auto;
+        top: auto;
+        margin: 0;
+    }
+
+    .profile-img {
+        width: 180px;
+        height: 215px;
+        margin-bottom: 10px;
+    }
+
+    .sign-img {
+        width: 190px;
+        height: auto;
+        margin-top: -80px;
+        margin-left: 8px;
+        margin-bottom: 10px;
+    }
+
+    .contact-title {
+        font-size: 38px;
+        margin-bottom: 12px;
+    }
+
+    .contact-subtext {
+        max-width: 520px;
+        margin-bottom: 24px;
+    }
+
+    .email-pill {
+        font-size: 24px;
+        display: inline-block;
+        padding: 8px 26px 14px;
+        max-width: 100%;
+        overflow-wrap: anywhere;
+    }
+
+    .email-pill a {
+        display: inline-block;
+        max-width: 100%;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    .email-pill span {
+        font-size: 32px;
+    }
+
+    .contact-right {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(120px, 1fr));
+        gap: 24px;
+    }
+
+    .bg-name {
+        font-size: 96px;
+        line-height: 0.85;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    li.nav {
+        width: calc(100% - 24px);
+        border-radius: 18px;
+        justify-content: center;
+        padding: 10px 12px;
+    }
+
+    .logo {
+        position: static;
+        margin-right: 10px;
+    }
+
+    .navlink {
+        flex-wrap: wrap;
+        justify-content: center;
+        top: 0;
+        row-gap: 6px;
+    }
+
+    .home-title {
+        position: relative;
+        top: auto;
+        left: auto;
+        padding: 180px 16px 0;
+        width: 100%;
+    }
+
+    .home-title h1,
+    .home-title h2 {
+        margin: 0;
+        line-height: 1.1;
+    }
+
+    .is-animated,
+    .frontend-animated {
+        flex-wrap: wrap;
+        row-gap: 4px;
+    }
+
+    .home-des {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        margin: 18px 16px 0;
+        max-width: 100%;
+    }
+
+    .about {
+        padding-top: 80px;
+    }
+
+    .about-me {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .services-title,
+    .section-title-reveal.tech-tittle,
+    .works-section .works-title {
+        padding-top: 80px;
+        margin-bottom: 32px;
+    }
+
+    .about-title,
+    .services-title,
+    .section-title-reveal.tech-tittle h1,
+    .works-section .works-title {
+        font-size: 28px;
+    }
+
+    .service-list {
+        gap: 14px;
+    }
+
+    .service-card {
+        border-radius: 24px;
+        padding: 18px;
+    }
+
+    .glass-card1 {
+        max-width: 100%;
+        height: 210px;
+        border-radius: 28px;
+    }
+
+    .content h1 {
+        font-size: 22px;
+    }
+
+    .content p {
+        font-size: 18px;
+    }
+
+    .work {
+        min-height: 210px;
+    }
+
+    .contact {
+        padding: 80px 16px 110px;
+    }
+
+    .contact-title {
+        font-size: 30px;
+    }
+
+    .email-pill {
+        width: 100%;
+        text-align: center;
+        font-size: 18px;
+        padding: 10px 12px 14px;
+        border-radius: 24px;
+        white-space: normal;
+    }
+
+    .contact-right {
+        grid-template-columns: 1fr;
+    }
+
+    .bg-name {
+        font-size: 58px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .navlink {
+        font-size: 13px;
+    }
+
+    .navlink ul {
+        padding: 0 5px;
+    }
+
+    .home-title {
+        padding-top: 170px;
+    }
+
+    .about-me p {
+        font-size: 16px;
+    }
+
+    .service-content h3 {
+        font-size: 18px;
+    }
+
+    .service-content p {
+        font-size: 14px;
+    }
+
+    .tech-container-wrapper {
+        height: 105px;
+    }
+
+    .glass-card {
+        width: 60px;
+        height: 60px;
+    }
+
+    .glass-card img {
+        width: 28px;
+    }
+
+    .bg-name {
+        font-size: 46px;
+    }
+}
