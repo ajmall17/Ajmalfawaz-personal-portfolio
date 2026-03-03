@@ -7,6 +7,17 @@
     color: white;
     overflow-x: hidden;
 }
+@font-face {
+  font-family: 'ClashDisplay';
+  src: url('/assets/fonts/ClashDisplay-Variable.woff2') format('woff2'),
+       url('/assets/fonts/ClashDisplay-Variable.woff') format('woff');
+  font-weight: 200 400;
+  font-display: swap;
+}
+h1, h2, h3 {
+  font-family: 'ClashDisplay', sans-serif;
+  font-weight: 100;
+}
 
 /* home */
 
@@ -705,7 +716,7 @@ li.nav {
     margin-bottom: 0px;
     background-color: #000000f7;
     text-align: center;
-    background-image: url(img/tech-bac2.png);
+    background-image: url(img/tech-bac.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: left;
