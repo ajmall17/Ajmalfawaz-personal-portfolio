@@ -540,6 +540,28 @@ li.nav {
     max-width: 100%;
   }
 
+  .connect-pill-wrapper {
+    position: relative;
+    left: auto;
+    top: auto;
+    margin: 0 0 24px;
+    width: fit-content;
+    max-width: 100%;
+  }
+
+  .connect-pill {
+    gap: 14px;
+    padding: 12px 24px 14px;
+    border-radius: 999px;
+    font-size: 18px;
+  }
+
+  .connect-arrow-track,
+  .connect-arrow {
+    width: 26px;
+    height: 26px;
+  }
+
   .email-pill {
     position: relative;
     left: auto;
@@ -889,6 +911,13 @@ li.nav {
     font-size: 26px;
   }
 
+  .connect-pill {
+    width: 100%;
+    justify-content: center;
+    font-size: 16px;
+    padding: 11px 18px 13px;
+  }
+
   .contact-subtext,
   .contact-right li a,
   .social li {
@@ -985,6 +1014,17 @@ li.nav {
 
   .contact-title {
     font-size: 23px;
+  }
+
+  .connect-pill {
+    font-size: 14px;
+    gap: 10px;
+  }
+
+  .connect-arrow-track,
+  .connect-arrow {
+    width: 22px;
+    height: 22px;
   }
 
   .email-pill a {
