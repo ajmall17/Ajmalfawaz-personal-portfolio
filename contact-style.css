@@ -1,0 +1,280 @@
+@font-face {
+  font-family: 'ClashDisplay';
+  src: url('/assets/fonts/ClashDisplay-Variable.woff2') format('woff2'),
+       url('/assets/fonts/ClashDisplay-Variable.woff') format('woff');
+  font-weight: 200 400;
+  font-display: swap;
+}
+
+body.contact-page {
+    margin: 0;
+    padding: 0;
+    background-color: #030303; /* Very dark, almost black, based on the image */
+    color: #ffffff;
+    font-family: 'ClashDisplay', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+/* ── Navigation ── */
+.contact-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 60px;
+}
+
+.contact-nav-logo {
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #B31212;
+    text-decoration: none;
+}
+
+.contact-nav-back  {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+.contact-nav-back span {
+    font-size: 18px;
+    color: #ffffff;
+}   
+.contact-nav-back:hover {
+    color: #ffffff;
+}
+
+/* ── Main Layout ── */
+.contact-main {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 60px;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 1400px;
+    width: 100%;
+    gap: 80px;
+    align-items: flex-start;
+}
+
+/* ── Left Column: Heading ── */
+.contact-heading-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    min-height: 400px;
+}
+
+.contact-heading {
+    font-family: 'ClashDisplay', serif; /* Using ClashDisplay or fallback to serif */
+    font-size: clamp(40px, 5vw, 64px);
+    font-weight: 300;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin: 0;
+    color: #f5f5f5;
+}
+
+.contact-heading-circle {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff; /* Replicating the small circle with arrow at the bottom */
+    transition: transform 0.4s ease, border-color 0.4s ease;
+    margin-top: 60px; /* Space from heading */
+}
+
+.contact-heading-circle:hover {
+    transform: scale(1.05);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* ── Right Column: Form ── */
+.contact-form-col {
+    padding-left: 40px;
+}
+
+.contact-form-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #B31212; /* Purplish hue from the image for "INFO" */
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+}
+
+.form-row-full {
+    grid-template-columns: 1fr;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.form-group label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #a0a0a0;
+    margin-bottom: 20px;
+    display: block;
+}
+
+/* ── Minimalist Inputs ── */
+.form-group input,
+.form-group textarea {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 0 0 16px 0;
+    font-family: inherit;
+    font-size: 16px;
+    color: #ffffff;
+    outline: none;
+    transition: border-color 0.3s ease;
+    resize: none;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #666666;
+    font-weight: 400;
+}
+span {
+    color: #B31212;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+    border-bottom-color: #ffffff;
+}
+
+/* Animated Underline Effect */
+.form-group::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #ffffff;
+    transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.form-span {
+    color: #000000;
+
+}
+.form-group:focus-within::after {
+    width: 100%;
+}
+
+/* ── Submit Button ── */
+.form-actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form-submit {
+    background: rgba(255, 255, 255, 0.15);
+    border: none;
+    border-radius: 40px;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 16px 36px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.form-submit span {
+    color: #ffffff;
+}
+
+.form-submit:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+}
+
+/* Footer-like element from image */
+.buy-template-btn {
+    background: #ffffff;
+    color: #000000;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 12px;
+    padding: 10px 16px;
+    text-decoration: none;
+    align-self: flex-end; /* If we put it in the grid */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 992px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .contact-heading-col {
+        min-height: auto;
+    }
+
+    .contact-form-col {
+        padding-left: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-nav {
+        padding: 20px 30px;
+    }
+
+    .contact-main {
+        padding: 40px 30px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}

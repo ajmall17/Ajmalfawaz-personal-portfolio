@@ -13,6 +13,30 @@ body {
   overflow-x: hidden;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+.home,
+.about,
+.services,
+.tech,
+.works-section,
+.contact {
+  width: 100%;
+}
+
+.about,
+.tech,
+.contact {
+  height: auto;
+}
+
+.home nav,
+li.nav {
+  max-width: min(720px, calc(100vw - 40px));
+}
+
 /* <= 1400px: large desktop tuning */
 @media (max-width: 1400px) {
   li.nav {
@@ -20,8 +44,17 @@ body {
     transform: translateX(-50%);
   }
 
+  .home nav {
+    width: 100%;
+  }
+
   .section-title-reveal.tech-tittle {
-    left: -360px;
+    left: 0;
+    margin-left: 100px;
+  }
+
+  .work-visual {
+    left: 0;
   }
 
   .contact-title {
@@ -45,12 +78,19 @@ body {
 
 /* <= 1200px: laptop */
 @media (max-width: 1200px) {
+  li.nav {
+    width: min(720px, calc(100vw - 48px));
+  }
+
   .home-title {
     left: 48px;
+    top: 48%;
   }
 
   .home-des {
     right: 42px;
+    left: auto;
+    max-width: 420px;
   }
 
   .about {
@@ -76,7 +116,8 @@ body {
   }
 
   .section-title-reveal.tech-tittle {
-    left: -250px;
+    left: 0;
+    margin-left: 48px;
   }
 
   .tech {
@@ -94,9 +135,26 @@ body {
     padding: 0 4%;
   }
 
-  .works-grid {
-    padding: 20px 0 30px;
-    grid-template-rows: repeat(2, minmax(220px, 380px));
+  .works-list {
+    gap: 72px;
+    padding-bottom: 56px;
+  }
+
+  .work-item {
+    grid-template-columns: 88px minmax(0, 1.15fr) minmax(260px, 0.9fr);
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      "index . ."
+      ". visual copy";
+    column-gap: 34px;
+    row-gap: 24px;
+  }
+
+  .work-visual {
+    width: min(100%, 680px);
+    min-height: 360px;
+    left: 0;
+    justify-self: stretch;
   }
 
   .contact {
@@ -129,6 +187,7 @@ body {
     top: 0;
     font-size: 24px;
     padding: 10px 32px 14px;
+    max-width: calc(100% - 205px);
   }
 
   .contact-right {
@@ -180,6 +239,7 @@ body {
   .home {
     min-height: 100vh;
     height: auto;
+    padding-bottom: 40px;
   }
 
   .home-title {
@@ -202,6 +262,7 @@ body {
     bottom: 24px;
     font-size: 14px;
     font-weight: 400;
+    max-width: 100%;
   }
 
   .home-des p {
@@ -218,23 +279,35 @@ body {
     padding-left: 0;
     gap: 26px;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+  }
+
+  .prf.img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
 
   .prf img {
     margin-top: 0;
-    width: min(72vw, 260px);
+    width: 180px;
+    height: 252px;
+    border-radius: 12px;
   }
 
   .about-text {
     max-width: 100%;
     margin-top: 0;
     font-size: 18px;
+    width: 100%;
   }
 
   .about-title {
     font-size: 34px;
     margin-bottom: 14px;
+    display: block;
+    width: 100%;
+    text-align: center;
   }
 
   .about-me p {
@@ -253,11 +326,19 @@ body {
 
   .services-title {
     left: 0;
-    margin-left: 20px;
+    margin-left: 0;
     margin-bottom: 26px;
     font-size: 34px;
     padding-top: 90px;
     padding-bottom: 20px;
+    width: 100%;
+    text-align: center;
+  }
+
+  #services .section-title-reveal {
+    display: block;
+    width: 100%;
+    text-align: center;
   }
 
   .service-list {
@@ -289,10 +370,12 @@ body {
 
   .section-title-reveal.tech-tittle {
     left: 0;
-    margin-left: 20px;
+    margin-left: 0;
     margin-bottom: 24px;
     padding-top: 90px;
     padding-bottom: 24px;
+    width: 100%;
+    text-align: center;
   }
 
   .section-title-reveal.tech-tittle h1 {
@@ -348,25 +431,64 @@ body {
     padding-top: 90px;
     margin-bottom: 24px;
     font-size: 34px;
+    width: 100%;
+    text-align: center;
   }
 
-  .works-grid {
+  .works-list {
+    gap: 34px;
+    padding-bottom: 42px;
+  }
+
+  .work-item {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
-    gap: 14px;
-    padding: 0 0 28px;
+    grid-template-areas:
+      "index"
+      "visual"
+      "copy";
+    row-gap: 18px;
+    column-gap: 0;
   }
 
-  .works-grid .work:nth-child(1),
-  .works-grid .work:nth-child(2),
-  .works-grid .work:nth-child(3),
-  .works-grid .work:nth-child(4) {
-    grid-area: auto;
+  .work-index {
+    font-size: 56px;
+    padding-top: 0;
   }
 
-  .work {
-    min-height: 230px;
-    border-radius: 16px;
+  .work-visual {
+    left: 0;
+    justify-self: stretch;
+    width: 100%;
+    min-height: 260px;
+    border-radius: 24px;
+  }
+
+  .work-copy {
+    gap: 16px;
+    max-width: none;
+    padding-top: 0;
+  }
+
+  .work-chip {
+    min-height: 42px;
+    padding: 8px 16px;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+  }
+
+  .work-copy h3 {
+    font-size: 30px;
+  }
+
+  .work-copy p {
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  .work-meta {
+    font-size: 12px;
+    line-height: 1.7;
   }
 
   .contact {
@@ -381,6 +503,8 @@ body {
   .contact-left {
     max-width: 100%;
     position: relative;
+    display: flex;
+    flex-direction: column;
   }
 
   .profile-img {
@@ -421,6 +545,7 @@ body {
     left: auto;
     top: auto;
     max-width: 100%;
+    width: fit-content;
     padding: 12px 18px 14px;
     border-radius: 30px;
     font-size: 18px;
@@ -439,6 +564,7 @@ body {
     margin-top: 8px;
     left: auto;
     gap: 36px;
+    flex-wrap: wrap;
   }
 
   .bg-name {
@@ -452,30 +578,99 @@ body {
 /* <= 768px: large phone / small tablet */
 @media (max-width: 768px) {
   li.nav {
+    background: transparent;
     border-radius: 20px;
     padding: 8px 12px;
     height: auto;
-    min-height: 50px;
-    align-items: flex-start;
+    min-height: 58px;
+    align-items: center;
+    justify-content: space-between;
+    overflow: visible;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+  .nav-toggle-line,
+  .nav-toggle-line::before,
+  .nav-toggle-line::after {
+    width: 22px;
+  }
+
+  .nav-toggle-line::before,
+  .nav-toggle-line::after {
+    opacity: 1;
+  }
+
+  li.nav.nav-open .nav-toggle-line::before,
+  li.nav.nav-open .nav-toggle-line::after {
+    opacity: 1;
   }
 
   .navlink {
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    row-gap: 4px;
-    column-gap: 10px;
-    max-width: 82%;
-    font-size: 13px;
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    left: auto;
+    width: min(220px, calc(100vw - 32px));
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0;
+    padding: 10px 0;
+    max-width: none;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    backdrop-filter: blur(18px);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-10px) scale(0.98);
+    transform-origin: top right;
+    transition: opacity 0.28s ease, transform 0.32s ease, visibility 0.28s ease;
+    z-index: 5;
+  }
+
+  li.nav.nav-open .navlink {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+  }
+
+  .navlink ul {
+    width: 100%;
+    margin: 0;
+    padding: 0;
   }
 
   .navlink a {
+    display: block;
+    width: 100%;
+    padding: 12px 18px;
     font-size: 13px;
+    color: rgba(255, 255, 255, 0.92);
+    transition: color 0.25s ease, transform 0.25s ease, background-color 0.25s ease;
+  }
+
+  .navlink a:hover {
+    color: #ffffff;
+    background: transparent;
+    transform: translateX(4px);
   }
 
   .home-title {
     top: 40%;
     left: 16px;
     right: 16px;
+  }
+
+  .home-title h1,
+  .home-title h2 {
+    line-height: 1.05;
   }
 
   .home-des {
@@ -486,7 +681,16 @@ body {
 
   .home-des p {
     font-size: 13px;
-    line-height: 1.4;
+    line-height: 1.5;
+    max-width: 28ch;
+  }
+
+  .home-des p br {
+    display: none;
+  }
+
+  .home-des p.typing-done br {
+    display: none;
   }
 
   .services-title,
@@ -505,6 +709,15 @@ body {
     flex-direction: column;
     align-items: flex-start;
     border-radius: 22px;
+    height: auto;
+  }
+
+  .service-number {
+    margin-bottom: 4px;
+  }
+
+  .work-item {
+    padding-bottom: 8px;
   }
 
   .content p {
@@ -526,6 +739,7 @@ body {
   li.nav {
     width: calc(100% - 20px);
     top: 10px;
+    gap: 8px;
   }
 
   .logo {
@@ -533,13 +747,13 @@ body {
   }
 
   .navlink {
-    column-gap: 8px;
-    max-width: 80%;
-    font-size: 12px;
+    width: min(210px, calc(100vw - 24px));
+    right: 0;
   }
 
   .navlink a {
     font-size: 12px;
+    padding: 11px 16px;
   }
 
   .home-title h1 {
@@ -550,9 +764,36 @@ body {
     font-size: clamp(1.8rem, 8vw, 2.3rem);
   }
 
+  .home-title .is-animated,
+  .home-title .frontend-animated {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+
+  .property,
+  .fe-property {
+    width: auto;
+    animation: none;
+  }
+
+  .value span,
+  .fe-value span {
+    transform: none;
+    animation: none;
+  }
+
   .about {
     padding-top: 86px;
     padding-bottom: 56px;
+  }
+
+  .about-me {
+    gap: 20px;
+  }
+
+  .prf img {
+    width: min(54vw, 190px);
   }
 
   .about-title,
@@ -562,8 +803,26 @@ body {
     font-size: 26px;
   }
 
+  .about-text .section-title-reveal {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  .services-title {
+    font-size: 22px;
+    line-height: 1.25;
+    padding-inline: 12px;
+  }
+
   .about-me p {
     font-size: 15px;
+  }
+
+  .about-me button {
+    width: 120px;
+    height: 38px;
+    font-size: 11px;
   }
 
   .service-content h3 {
@@ -591,12 +850,39 @@ body {
     --tech-percent-size: 12px;
   }
 
-  .works-grid {
-    gap: 12px;
+  .works-list {
+    gap: 28px;
   }
 
-  .work {
-    min-height: 190px;
+  .work-index {
+    font-size: 48px;
+  }
+
+  .work-visual {
+    min-height: 220px;
+    border-radius: 20px;
+  }
+
+  .iphone-3d-wrapper {
+    padding: 6px;
+  }
+
+  .iphone-3d-container {
+    width: 180px;
+    height: 370px;
+  }
+
+  .work-copy h3 {
+    font-size: 26px;
+  }
+
+  .work-copy p {
+    font-size: 14px;
+  }
+
+  .work-meta {
+    font-size: 11px;
+    letter-spacing: 0.1em;
   }
 
   .contact-title {
@@ -618,12 +904,17 @@ body {
   .email-pill a {
     font-size: 14px;
   }
+
+  .contact-right {
+    gap: 18px;
+  }
 }
 
 /* <= 420px: small phones */
 @media (max-width: 420px) {
   li.nav {
     padding: 8px 10px;
+    align-items: center;
   }
 
   .logo {
@@ -631,9 +922,7 @@ body {
   }
 
   .navlink {
-    column-gap: 6px;
-    row-gap: 2px;
-    max-width: 78%;
+    width: min(196px, calc(100vw - 20px));
   }
 
   .navlink a {
@@ -644,8 +933,17 @@ body {
     top: 38%;
   }
 
+  .home-title h1 {
+    font-size: clamp(1.35rem, 8vw, 1.8rem);
+  }
+
+  .home-title h2 {
+    font-size: clamp(1.55rem, 9vw, 2rem);
+  }
+
   .home-des p {
     font-size: 12px;
+    max-width: 24ch;
   }
 
   .about-title,
@@ -655,9 +953,19 @@ body {
     font-size: 23px;
   }
 
+  .services-title {
+    font-size: 20px;
+  }
+
   .profile-img {
     width: 132px;
     height: 160px;
+  }
+
+  .prf img {
+    width: min(50vw, 170px);
+    height: auto;
+    border-radius: 24px;
   }
 
   .sign-img {
@@ -666,8 +974,21 @@ body {
     top: 66px;
   }
 
+  .work-visual {
+    min-height: 200px;
+  }
+
+  .iphone-3d-container {
+    width: 156px;
+    height: 322px;
+  }
+
   .contact-title {
     font-size: 23px;
+  }
+
+  .email-pill a {
+    font-size: 13px;
   }
 
   .bg-name {
