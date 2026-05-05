@@ -54,7 +54,9 @@
                     <span>INFO</span>
                 </div>
 
-                <form class="contact-form" id="contact-form" action="mailto:ajmalfawaz37@gmail.com" method="POST" enctype="text/plain">
+                <form class="contact-form" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="54d2310a-973b-43bd-91d5-93fc4af5eec9">
+                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 
                     <!-- Row 1: Name + Phone -->
                     <div class="form-row">
@@ -93,6 +95,7 @@
                         <button type="submit" class="form-submit" id="form-submit">
                             <span>Submit</span>
                         </button>
+                        <p class="form-status" id="form-status" aria-live="polite"></p>
                     </div>
 
                 </form>
@@ -100,6 +103,47 @@
 
         </div>
     </main>
+
+    <script>
+        const contactForm = document.getElementById('contact-form');
+        const formSubmit = document.getElementById('form-submit');
+        const formStatus = document.getElementById('form-status');
+
+        contactForm.addEventListener('submit', async function (event) {
+            event.preventDefault();
+
+            formSubmit.disabled = true;
+            formSubmit.querySelector('span').textContent = 'Sending...';
+            formStatus.textContent = '';
+            formStatus.classList.remove('is-error', 'is-success');
+
+            const formData = new FormData(contactForm);
+
+            try {
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    contactForm.reset();
+                    formStatus.textContent = 'Message sent successfully.';
+                    formStatus.classList.add('is-success');
+                } else {
+                    formStatus.textContent = 'Something went wrong. Please try again.';
+                    formStatus.classList.add('is-error');
+                }
+            } catch (error) {
+                formStatus.textContent = 'Unable to send right now. Please try again.';
+                formStatus.classList.add('is-error');
+            }
+
+            formSubmit.disabled = false;
+            formSubmit.querySelector('span').textContent = 'Submit';
+        });
+    </script>
 
 </body>
 
